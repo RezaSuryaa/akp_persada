@@ -1,0 +1,697 @@
+:root {
+    --primary-color: #335FCE;
+    --secondary-color: #000000;
+    --third-color: #ffffff;
+    --text-color: #21252980;
+}
+
+[data-aos] {
+    visibility: hidden;
+    will-change: transform, opacity;
+}
+
+[data-aos].aos-animate {
+    visibility: visible;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+[data-aos="fade-down"] {
+    transform: translateY(-30px);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+[data-aos="fade-right"] {
+    transform: translateX(-30px);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+[data-aos="fade-left"] {
+    transform: translateX(30px);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+[data-aos="zoom-in"] {
+    transform: scale(0.6);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+/* Saat animasi aktif */
+[data-aos].aos-animate {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: var(--third-color);
+    font-family: "Poppins", sans-serif;
+}
+
+.video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-custom {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    color: var(--third-color);
+    background-color: var(--primary-color);
+    border: none;
+    margin-top: 20px;
+    text-decoration: none;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom:hover {
+    color: var(--primary-color);
+    background-color: var(--third-color);
+    border: none;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.judul {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 10px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.icon {
+    color: var(--primary-color);
+    font-size: 35px;
+}
+
+.pro {
+    color: var(--primary-color);
+}
+
+.vimi {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+
+.vimi h5 {
+    border-left: 4px solid var(--third-color);
+    padding-left: 10px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 576px) {
+    .row.gx-5 {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .vimi h5 {
+        font-size: 18px;
+    }
+
+    .vimi {
+        font-size: 14px;
+    }
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.layanan {
+    background-color: var(--primary-color);
+    padding: 50px;
+    border-radius: 100px;
+}
+
+.circle-icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle at top left, red, yellow);
+    border: 15px solid white;
+    color: white;
+    font-size: 50px;
+}
+
+@media (max-width: 1200px) {
+    .layanan {
+        border-radius: 200px !important;
+        padding: 30px;
+    }
+
+    .layanan>.col-md-6 {
+        flex-direction: column !important;
+        text-align: center !important;
+        margin-bottom: 30px;
+    }
+
+    .circle-icon {
+        margin: 0 auto 20px auto !important;
+        width: 120px;
+        height: 120px;
+        font-size: 40px;
+        border-width: 10px;
+    }
+
+    .layanan h5,
+    .layanan ul {
+        text-align: center !important;
+        width: 100%;
+    }
+
+    .layanan ul {
+        padding-left: 0;
+        list-style-position: inside;
+    }
+}
+
+@media (max-width: 576px) {
+    #layanan .layanan {
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 50px !important;
+    }
+}
+
+.alat-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.alat-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.alat-card:hover img {
+    transform: scale(1.1);
+}
+
+.alat-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s ease;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alat-card:hover .alat-overlay {
+    opacity: 1;
+}
+
+.kategori-btn {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 999px;
+    border: 1px solid var(--primary-color);
+    padding: 10px 24px;
+    background-color: var(--third-color);
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.kategori-btn::before {
+    content: '';
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.kategori-btn:hover::before {
+    bottom: 0;
+}
+
+.kategori-btn:hover {
+    color: var(--third-color);
+    transform: scale(1.05);
+}
+
+.kategori-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.kategori-btn.active {
+    background-color: var(--primary-color);
+    color: var(--third-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+
+.loading-spinner {
+    display: none;
+    width: 50px;
+    height: 50px;
+    margin: 100px auto;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #335FCE;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#alat-container .row {
+    transition: opacity 0.3s ease;
+}
+
+#alat-container .row.fade-in {
+    opacity: 1;
+}
+
+/* Tambahkan di bagian bawah file CSS */
+.alat-view-icon {
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2;
+    color: var(--primary-color);
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.alat-card:hover .alat-view-icon {
+    opacity: 1;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-image-wrapper {
+    max-width: 100%;
+    max-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.modal-caption {
+    color: #333;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.close-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #ff0000;
+    transform: rotate(90deg);
+}
+
+/* Produk Card - sama dengan alat card */
+.produk-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.produk-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.produk-card:hover img {
+    transform: scale(1.1);
+}
+
+.produk-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s ease;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.produk-card:hover .produk-overlay {
+    opacity: 1;
+}
+
+.produk-view-icon {
+    position: relative;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #335FCE;
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.produk-view-icon:hover {
+    background: white;
+}
+
+#legalitas {
+    background-color: var(--primary-color);
+}
+
+#legalitas .judul {
+    border-color: var(--third-color);
+}
+
+.legal-card {
+    background-color: white;
+    padding: 20px 25px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.legal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.legal-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+#legalitas h3 {
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .legal-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .legal-icon {
+        margin-bottom: 0;
+    }
+
+    .legal-content {
+        flex: 1;
+    }
+}
+
+.client-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 120px;
+}
+
+.client-track {
+    display: flex;
+    animation: scrollClients 20s linear infinite;
+    gap: 40px;
+    padding-left: 40px;
+}
+
+.client-logo {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+    border-radius: 10px;
+}
+
+.client-logo img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.client-logo:hover {
+    filter: none;
+    opacity: 1;
+}
+
+.client-slider:hover .client-track {
+    animation-play-state: paused;
+}
+
+@keyframes scrollClients {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* CSS Kontak */
+#kontak h3 {
+    color: var(--primary-color);
+}
+
+.kontak-box {
+    background-color: var(--primary-color);
+    color: var(--third-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border-radius: 10px !important;
+    padding: 1.5rem;
+}
+
+.kontak-box span {
+    word-break: break-word;
+    padding: 0 0.5rem; 
+}
+
+@media (min-width: 992px) {
+    .kontak-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .col-lg-6 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    iframe {
+        flex-grow: 1;
+        min-height: 500px;
+        height: 100% !important;
+    }
+    
+    @media (min-width: 1199px) {
+        .kontak-box {
+            padding: 1.5rem 2rem; 
+        }
+        
+        .kontak-box span {
+            padding: 0 1rem;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    iframe {
+        height: 400px;
+        margin-top: 2rem;
+    }
+    
+    .kontak-box {
+        margin-bottom: 1.5rem;
+        padding: 1.25rem !important;    }
+}
+
+.kontak-box:last-child {
+    padding: 1.25rem 1.75rem !important; 
+}
