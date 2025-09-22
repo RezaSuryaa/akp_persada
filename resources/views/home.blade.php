@@ -13,28 +13,29 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-    <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}"">
+    <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
     <title>AKP Persada</title>
 </head>
 
 <body>
     <!-- Start Hero Section-->
-    <section id=" hero" class="position-relative" style="height: 100vh;">
-    <div class="video-wrapper position-absolute top-0 start-0 w-100 h-100 z-n1">
-        <video autoplay muted loop playsinline id="bg-video">
-            <source src="{{ asset('videos/video.mp4') }}" type="video/mp4" />
-        </video>
-        <div class="video-overlay position-absolute w-100 h-100"></div>
-    </div>
-
-    <div class="container h-100 d-flex justify-content-center align-items-center">
-        <div class="text-center text-white" data-aos="fade-up" data-aos-delay="300">
-            <h1 data-aos="fade-up">PT. AKP PERSADA</h1>
-            <p class="fs-4" data-aos="fade-up" data-aos-delay="100">Mitra Andal dalam Perdagangan Umum dan Jasa
-                Industri</p>
-            <a href="#" class="btn-custom mt-3" data-aos="fade-up" data-aos-delay="200">Hubungi Kami</a>
+    <section id="hero" class="position-relative" style="height: 100vh;">
+        <div class="video-wrapper position-absolute top-0 start-0 w-100 h-100 z-n1">
+            <video autoplay muted playsinline id="bg-video">
+                <source src="{{ asset('videos/video.mp4') }}" type="video/mp4" />
+            </video>
+            <div class="video-overlay position-absolute w-100 h-100"></div>
         </div>
-    </div>
+
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+            <div class="text-center text-white" data-aos="fade-up" data-aos-delay="300">
+                <h1 data-aos="fade-up">PT. AKP PERSADA</h1>
+                <p data-aos="fade-up" data-aos-delay="100">Mitra Andal dalam Perdagangan Umum dan Jasa
+                    Industri
+                </p>
+                <a href="#" class="btn-custom mt-3" data-aos="fade-up" data-aos-delay="200">Hubungi Kami</a>
+            </div>
+        </div>
     </section>
     <!-- End Hero Section -->
 
@@ -42,7 +43,7 @@
     <section id="tentang" class="py-5">
         <div class="container">
             <div class="d-flex justify-content-center py-5">
-                <p class="judul text-dark" data-aos="fade-down">Tentang Kami</p>
+                <h1 class="judul text-dark" data-aos="fade-down">Tentang Kami</h1>
             </div>
             <div class="row">
                 <div class="d-flex flex-column flex-xl-row align-items-center">
@@ -85,8 +86,15 @@
                     </div>
                 </div>
             </div>
-            <div class="row pt-5 mt-5 gx-5">
-                <div class="col-12 col-md-5 vimi mb-4 mb-md-0" data-aos="fade-right">
+        </div>
+    </section>
+    <!-- End Tentang -->
+
+    <!-- Start Visi & Misi -->
+    <section id="visi-misi" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-5 vimi" data-aos="fade-right">
                     <div class="vimi-header d-flex justify-content-between align-items-center mb-3">
                         <h5 class="m-0">Visi</h5>
                         <div class="dots d-flex gap-2">
@@ -95,11 +103,13 @@
                             <span class="dot"></span>
                         </div>
                     </div>
-                    <p>Menjadikan perusahaan kami salah satu perusahaan yang besar dapat berkembang dan mampu bersaing
-                        secara global dengan perusahaan-perusahaan lainnya.</p>
+                    <p>
+                        Menjadikan perusahaan kami salah satu perusahaan yang besar dapat berkembang dan
+                        mampu bersaing secara global dengan perusahaan-perusahaan lainnya.
+                    </p>
                 </div>
 
-                <div class="col-12 col-md-5 offset-md-1 vimi" data-aos="fade-left" data-aos-delay="100">
+                <div class="col-12 col-md-5 vimi" data-aos="fade-left" data-aos-delay="100">
                     <div class="vimi-header d-flex justify-content-between align-items-center mb-3">
                         <h5 class="m-0">Misi</h5>
                         <div class="dots d-flex gap-2">
@@ -108,19 +118,21 @@
                             <span class="dot"></span>
                         </div>
                     </div>
-                    <p>Misi kami adalah berkomitmen untuk terus maju dan berkembang dengan mengutamakan kualitas dan
-                        memberikan pelayanan yang optimal.</p>
+                    <p>
+                        Misi kami adalah berkomitmen untuk terus maju dan berkembang dengan mengutamakan
+                        kualitas dan memberikan pelayanan yang optimal.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Tentang -->
+    <!-- End Visi & Misi -->
 
     <!-- Start Layanan -->
     <section id="layanan">
         <div class="container py-5">
             <div class="d-flex justify-content-center pb-5">
-                <p class="judul text-dark" data-aos="fade-down">Layanan Kami</p>
+                <h1 class="judul text-dark" data-aos="fade-down">Layanan Kami</h1>
             </div>
             <div class="text-center text-dark">
                 <h3 class="fw-semibold" data-aos="fade-up">Solusi Tepat untuk <span style="color: #335FCE;">Industri
@@ -210,42 +222,50 @@
     <section id="alat">
         <div class="container py-5">
             <div class="d-flex justify-content-center pb-5">
-                <p class="judul text-dark" data-aos="fade-down">Alat Kami</p>
+                <h1 class="judul text-dark" data-aos="fade-down">Alat Kami</h1>
             </div>
-            <div class="container mb-4 text-center">
+
+            <!-- Filter -->
+            <div class="container mb-4 text-center" data-aos="flip-left" data-aos-delay="200">
                 <div class="d-flex flex-wrap justify-content-center gap-2">
                     <button onclick="filterAlat(null)"
                         class="kategori-btn {{ request('kategori_alat_id') == null ? 'active' : '' }}">
                         <span>Semua</span>
                     </button>
-
                     @foreach ($kategorisAlat as $kategori)
-                    <button onclick="filterAlat({{ $kategori->id }})"
-                        class="kategori-btn {{ request('kategori_alat_id') == $kategori->id ? 'active' : '' }}">
-                        <span>{{ $kategori->nama }}</span>
-                    </button>
+                        <button onclick="filterAlat({{ $kategori->id }})"
+                            class="kategori-btn {{ request('kategori_alat_id') == $kategori->id ? 'active' : '' }}">
+                            <span>{{ $kategori->nama }}</span>
+                        </button>
                     @endforeach
                 </div>
             </div>
 
+            <!-- Alat -->
             <div id="alat-container">
-                <div class="loading-spinner" id="loading-spinner"></div>
-                <div class="row">
+                <div class="loading-spinner" id="loading-spinner-alat"></div>
+
+                <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-4 g-4" id="alat-row">
                     @forelse ($alats as $alat)
-                    <div class="col-md-3">
-                        <div class="alat-card">
-                            <img src="{{ asset('storage/' . $alat->gambar) }}" alt="{{ $alat->nama }}">
-                            <div class="alat-overlay">
-                                <div>{{ $alat->nama }}</div>
-                                <div class="alat-view-icon"
-                                    onclick="showImageModal('{{ asset('storage/' . $alat->gambar) }}', '{{ $alat->nama }}')">
-                                    <i class="fas fa-eye"></i>
+                        <div class="col" data-aos="zoom-out-up" data-aos-delay="250">
+                            <div class="alat-card">
+                                <!-- Gambar -->
+                                <img src="{{ asset('storage/' . $alat->gambar) }}" alt="{{ $alat->nama }}">
+
+                                <!-- Overlay -->
+                                <div class="alat-overlay">
+                                    <div>{{ $alat->nama }}</div>
+                                    <div class="alat-view-icon"
+                                        onclick="showImageModal('{{ asset('storage/' . $alat->gambar) }}', '{{ $alat->nama }}')">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @empty
-                    <p class="text-center text-danger">Tidak ada alat dalam kategori ini.</p>
+                        <div class="col-12">
+                            <p class="text-center text-danger my-5">Tidak ada alat dalam kategori ini.</p>
+                        </div>
                     @endforelse
                 </div>
             </div>
@@ -268,21 +288,21 @@
     <section id="legalitas">
         <div class="container py-5">
             <div class="d-flex justify-content-start pb-3">
-                <p class="judul text-white" data-aos="fade-down">Legalitas</p>
+                <h1 class="judul text-white" data-aos="fade-down">Legalitas</h1>
             </div>
 
             <div class="row align-items-center">
                 <div class="col-lg-6 pe-lg-5 mb-4 mb-lg-0">
-                    <h3 class="fw-bold text-white pb-3">
+                    <h3 class="fw-bold text-white pb-3" data-aos="fade-right" data-aos-delay="100">
                         Legalitas Terjamin, Kepercayaan Anda Adalah Prioritas Kami!
                     </h3>
-                    <p style="text-align: justify;">
+                    <p style="text-align: justify;" data-aos="fade-right" data-aos-delay="120">
                         Kami percaya bahwa kesuksesan dimulai dari dasar yang kokoh. Legalitas yang lengkap menjadi
                         salah satu pilar utama kami dalam menjalankan setiap bisnis dan kerja sama. Dengan landasan
                         hukum yang kuat, kami tidak hanya menawarkan produk dan layanan, tetapi juga memberikan
                         kepercayaan dan keamanan yang Anda butuhkan.
                     </p>
-                    <p style="text-align: justify;">
+                    <p style="text-align: justify;" data-aos="fade-right" data-aos-delay="200">
                         Sebagai mitra yang profesional, kami siap membantu Anda mengembangkan bisnis dengan
                         langkah-langkah yang aman dan transparan. Setiap transaksi, setiap proyek, kami jalankan dengan
                         komitmen yang jelas dan penuh tanggung jawab.
@@ -290,7 +310,7 @@
                 </div>
 
                 <div class="col-lg-6 text-dark">
-                    <div class="legal-card mb-4 d-flex" data-aos="fade-right">
+                    <div class="legal-card mb-4 d-flex" data-aos="fade-left" data-aos-delay="120">
                         <div class="legal-icon">
                             <i class="fas fa-check-circle"></i>
                         </div>
@@ -301,7 +321,7 @@
                         </div>
                     </div>
 
-                    <div class="legal-card mb-4 d-flex" data-aos="fade-right">
+                    <div class="legal-card mb-4 d-flex" data-aos="fade-left" data-aos-delay="150">
                         <div class="legal-icon">
                             <i class="fas fa-file-alt"></i>
                         </div>
@@ -314,7 +334,7 @@
                         </div>
                     </div>
 
-                    <div class="legal-card mb-4 d-flex" data-aos="fade-right">
+                    <div class="legal-card mb-4 d-flex" data-aos="fade-left" data-aos-delay="200">
                         <div class="legal-icon">
                             <i class="fas fa-balance-scale"></i>
                         </div>
@@ -336,48 +356,62 @@
     <section id="produk" class="py-5">
         <div class="container py-5">
             <div class="d-flex justify-content-center pb-5">
-                <p class="judul text-dark" data-aos="fade-down">Produk Kami</p>
+                <h1 class="judul text-dark" data-aos="fade-down">Produk Kami</h1>
             </div>
-            <div class="container mb-4 text-center">
+
+            <!-- Filter -->
+            <div class="container mb-4 text-center" data-aos="flip-left" data-aos-delay="200">
                 <div class="d-flex flex-wrap justify-content-center gap-2">
                     <button onclick="filterProduk(null)"
-                        class="kategori-btn {{ request('kategori_produk_id') == null ? 'active' : '' }}">
+                        class="kategori-btn {{ request('kategori_produk_id') == null ? 'active' : '' }}"
+                        data-kategori="all">
                         <span>Semua</span>
                     </button>
-
                     @foreach ($kategorisProduk as $kategori)
-                    <button onclick="filterProduk({{ $kategori->id }})"
-                        class="kategori-btn {{ request('kategori_produk_id') == $kategori->id ? 'active' : '' }}">
-                        <span>{{ $kategori->nama }}</span>
-                    </button>
+                        <button onclick="filterProduk({{ $kategori->id }})"
+                            class="kategori-btn {{ request('kategori_produk_id') == $kategori->id ? 'active' : '' }}"
+                            data-kategori="{{ $kategori->id }}">
+                            <span>{{ $kategori->nama }}</span>
+                        </button>
                     @endforeach
                 </div>
             </div>
 
+            <!-- Produk -->
             <div id="produk-container">
                 <div class="loading-spinner" id="loading-spinner-produk"></div>
-                <div class="row">
+
+                <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-5 g-4"
+                    id="produk-row">
                     @forelse ($produks as $produk)
-                    <div class="col-md-3">
-                        <div class="produk-card">
-                            <img src="{{ asset('storage/' . $produk->gambar) }}" alt="{{ $produk->nama }}">
-                            <div class="produk-overlay">
-                                <div>{{ $produk->nama }}</div>
-                                <div class="produk-view-icon"
-                                    onclick="showImageModal('{{ asset('storage/' . $produk->gambar) }}', '{{ $produk->nama }}')">
-                                    <i class="fas fa-eye"></i>
+                        <div class="col" data-aos="zoom-out-up" data-aos-delay="250">
+                            <div class="produk-card">
+                                <!-- Gambar -->
+                                <div class="produk-image-wrapper">
+                                    <span class="produk-badge">SAMPLE</span>
+                                    <img src="{{ asset('storage/' . $produk->gambar) }}" alt="{{ $produk->nama }}">
+                                </div>
+
+                                <!-- Nama + Icon -->
+                                <div class="produk-footer">
+                                    <p class="produk-nama">{{ $produk->nama }}</p>
+                                    <div class="produk-view-icon"
+                                        onclick="showImageModal('{{ asset('storage/' . $produk->gambar) }}', '{{ $produk->nama }}')">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @empty
-                    <p class="text-center text-danger">Tidak ada produk dalam kategori ini.</p>
+                        <div class="col-12">
+                            <p class="text-center text-danger my-5">Tidak ada alat dalam kategori ini.</p>
+                        </div>
                     @endforelse
                 </div>
             </div>
         </div>
 
-        <!-- Modal Gambar (sudah ada di kode Anda) -->
+        <!-- Modal Gambar -->
         <div class="modal-overlay" id="imageModal">
             <div class="modal-container">
                 <button class="close-modal" onclick="closeImageModal()">&times;</button>
@@ -393,9 +427,9 @@
     <section id="klien" class="py-5 overflow-hidden">
         <div class="container">
             <div class="d-flex justify-content-center pb-5">
-                <p class="judul text-dark" data-aos="fade-down">Klien Kami</p>
+                <h1 class="judul text-dark" data-aos="fade-down">Klien Kami</h1>
             </div>
-            <div class="client-slider d-flex align-items-center">
+            <div class="client-slider d-flex align-items-center" data-aos="zoom-in" data-aos-delay="200">
                 <div class="client-track d-flex">
                     <div class="client-logo">
                         <img src="{{ asset('images/klien/ark.webp') }}" alt="Klien 1">
@@ -491,16 +525,16 @@
     <!-- Start Kontak -->
     <section id="kontak" class="py-5">
         <div class="container">
-            <!-- Judul -->
+        h1   <!-- Judul -->
             <div class="d-flex justify-content-center pb-5">
-                <p class="judul text-dark" data-aos="fade-down">Kontak Kami</p>
+                <h1 class="judul text-dark" data-aos="fade-down">Kontak Kami</h1>
             </div>
 
             <div class="row g-5">
                 <!-- Konten Kiri -->
                 <div class="col-12 col-lg-6 pe-lg-4">
                     <!-- Ditambah pe-lg-4 untuk gap lebih besar -->
-                    <div class="kontak-content d-flex flex-column h-100">
+                    <div class="kontak-content d-flex flex-column h-100" data-aos="zoom-out-right" data-aos-delay="100">
                         <div class="mb-4">
                             <h3 class="fw-bold text-dark">Butuh Informasi Lebih Lanjut?</h3>
                             <h3 class="fw-bold mb-3">Hubungi Kami</h3>
@@ -514,7 +548,7 @@
                         </div>
 
                         <!-- Email & Telepon -->
-                        <div class="row g-3 mb-3">
+                        <div class="row g-3 mb-3" data-aos="zoom-out-up" data-aos-delay="150">
                             <div class="col-12 col-md-6">
                                 <div
                                     class="kontak-box rounded-4 p-3 d-flex flex-column align-items-center text-center h-100">
@@ -535,7 +569,7 @@
                         </div>
 
                         <!-- Alamat -->
-                        <div class="mt-auto">
+                        <div class="mt-auto" data-aos="zoom-out-up" data-aos-delay="250">
                             <!-- mt-auto untuk push ke bawah -->
                             <div class="kontak-box rounded-4 p-3 d-flex flex-column align-items-center text-center">
                                 <i class="fas fa-map-marker-alt fs-2 mb-2"></i>
@@ -546,7 +580,7 @@
                 </div>
 
                 <!-- Konten Kanan (Google Maps) -->
-                <div class="col-12 col-lg-6 ps-lg-4">
+                <div class="col-12 col-lg-6 ps-lg-4" data-aos="zoom-out-left" data-aos-delay="100">
                     <!-- Ditambah ps-lg-4 untuk gap lebih besar -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253842.2631939413!2d106.66754395!3d-6.3874999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ebadad89b0b9%3A0x18457fa0d67838da!2sDepok%2C%20Kota%20Depok%2C%20Jawa%20Barat!5e0!3m2!1sen!2sid!4v1653631864367!5m2!1sen!2sid"
@@ -559,111 +593,176 @@
     </section>
     <!-- End Kontak -->
 
+    <!-- Start Footer -->
+    <footer class="footer pt-5 pb-3">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-12 col-md-5 text-center text-md-start mb-5" data-aos="fade-right">
+                    <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start">
+                        <img src="assets/logo.png" alt="Logo" class="footer-logo me-0 me-md-3 mb-3 mb-md-0">
+
+                        <div>
+                            <h6 class="fw-bold mb-3">PT. AKP PERSADA</h6>
+                            <p class="footer-teks">
+                                Kami berkomitmen untuk menjadi mitra terpercaya dalam memenuhi kebutuhan industri Anda.
+                                Terima kasih telah mengunjungi halaman kami.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 text-center text-md-start mb-5" data-aos="fade-right">
+                    <h6 class="fw-bold mb-3">Layanan</h6>
+                    <ul class="list-unstyled">
+                        <li>Bidang Percetakan</li>
+                        <li>Bidang Perdagangan</li>
+                        <li>Bidang Perindustrian</li>
+                        <li>Bidang Jasa</li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-3 text-center text-md-start" data-aos="fade-right">
+                    <h6 class="fw-bold mb-3">Sosial Media</h6>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="mb-0 text-white-50">
+                        Copyright © 2025 AKP Persada. All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-    AOS.init({
-        duration: 800,
-        once: false, // agar animasi bisa terulang saat scroll bolak-balik
-        mirror: true, // animasi akan terbalik saat scroll ke atas
-        easing: 'ease-in-out-quad'
-    });
-    </script>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- JS Ulang Video -->
     <script>
-    function filterAlat(kategoriId) {
-        // Tampilkan spinner dan sembunyikan konten dengan efek
-        $('#loading-spinner').show();
-        $('#alat-container .row').css('opacity', '0');
+        document.addEventListener("DOMContentLoaded", function () {
+            const video = document.getElementById("bg-video");
 
-        $.ajax({
-            url: "{{ route('filter.alat') }}",
-            type: "GET",
-            data: {
-                kategori_alat_id: kategoriId
-            },
-            success: function(response) {
-                // Sembunyikan spinner dan tampilkan konten baru dengan efek
-                $('#loading-spinner').hide();
-                $('#alat-container .row').replaceWith(response)
-                    .css('opacity', '0')
-                    .animate({
-                        opacity: 1
-                    }, 300);
-
-                // Update active button
-                $('.kategori-btn').removeClass('active');
-                if (kategoriId === null) {
-                    $('.kategori-btn:first').addClass('active');
-                } else {
-                    $(`button[onclick="filterAlat(${kategoriId})"]`).addClass('active');
-                }
-            },
-            error: function(xhr) {
-                $('#loading-spinner').hide();
-                $('#alat-container .row').css('opacity', '1');
-                console.log(xhr.responseText);
-            }
+            video.addEventListener("ended", function () {
+                video.currentTime = 0;
+                video.play();
+            });
         });
-    }
-
-    function filterProduk(kategoriId) {
-        // Tampilkan spinner dan sembunyikan konten dengan efek
-        $('#loading-spinner-produk').show();
-        $('#produk-container .row').css('opacity', '0');
-
-        $.ajax({
-            url: "{{ route('filter.produk') }}",
-            type: "GET",
-            data: {
-                kategori_produk_id: kategoriId
-            },
-            success: function(response) {
-                // Sembunyikan spinner dan tampilkan konten baru dengan efek
-                $('#loading-spinner-produk').hide();
-                $('#produk-container .row').replaceWith(response)
-                    .css('opacity', '0')
-                    .animate({
-                        opacity: 1
-                    }, 300);
-
-                // Update active button
-                $('.kategori-btn').removeClass('active');
-                if (kategoriId === null) {
-                    $('.kategori-btn:first').addClass('active');
-                } else {
-                    $(`button[onclick="filterProduk(${kategoriId})"]`).addClass('active');
-                }
-            },
-            error: function(xhr) {
-                $('#loading-spinner-produk').hide();
-                $('#produk-container .row').css('opacity', '1');
-                console.log(xhr.responseText);
-            }
-        });
-    }
     </script>
 
+    <!-- JS Settiing AOS Animation -->
     <script>
-    // Fungsi untuk menampilkan modal gambar
-    function showImageModal(imageSrc, caption) {
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
-
-        modalImage.src = imageSrc;
-
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    // Fungsi untuk menutup modal gambar
-    function closeImageModal() {
-        const modal = document.getElementById('imageModal');
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
+        AOS.init({
+            duration: 800,
+            once: false, // agar animasi bisa terulang saat scroll bolak-balik
+            mirror: true, // animasi akan terbalik saat scroll ke atas
+            easing: 'ease-in-out-quad'
+        });
     </script>
-    </body>
+
+    <!-- JS Filter -->
+    <script>
+        function filterAlat(kategoriId) {
+            // tampilkan spinner
+            $('#loading-spinner-alat').show();
+            $('#alat-row').css('opacity', '0');
+
+            $.ajax({
+                url: "{{ route('filter.alat') }}",
+                type: "GET",
+                data: { kategori_alat_id: kategoriId },
+                success: function (response) {
+                    $('#loading-spinner-alat').hide();
+
+                    // replace isi row dengan col dari partial
+                    $('#alat-row')
+                        .html(response)
+                        .css('opacity', '0')
+                        .animate({ opacity: 1 }, 300);
+
+                    // update active button
+                    $('.kategori-btn').removeClass('active');
+                    if (!kategoriId || kategoriId == 0) {
+                        $('.kategori-btn:first').addClass('active');
+                    } else {
+                        $(`button[onclick="filterAlat(${kategoriId})"]`).addClass('active');
+                    }
+                },
+                error: function (xhr) {
+                    $('#loading-spinner-alat').hide();
+                    $('#alat-row').css('opacity', '1');
+                    console.error(xhr.responseText);
+                }
+            });
+        }
+
+
+        function filterProduk(kategoriId) {
+            // tampilkan spinner
+            $('#loading-spinner-produk').show();
+            $('#produk-row').css('opacity', '0');
+
+            $.ajax({
+                url: "{{ route('filter.produk') }}",
+                type: "GET",
+                data: { kategori_produk_id: kategoriId },
+                success: function (response) {
+                    $('#loading-spinner-produk').hide();
+
+                    // replace isi row dengan col dari partial
+                    $('#produk-row')
+                        .html(response)
+                        .css('opacity', '0')
+                        .animate({ opacity: 1 }, 300);
+
+                    // update active button
+                    $('.kategori-btn').removeClass('active');
+                    if (!kategoriId || kategoriId == 0) {
+                        $('.kategori-btn[data-kategori="all"]').addClass('active');
+                    } else {
+                        $(`.kategori-btn[data-kategori="${kategoriId}"]`).addClass('active');
+                    }
+
+                },
+                error: function (xhr) {
+                    $('#loading-spinner-produk').hide();
+                    $('#produk-row').css('opacity', '1');
+                    console.error(xhr.responseText);
+                }
+            });
+        }
+
+    </script>
+
+    <!-- JS Modal Gambar -->
+    <script>
+        // Fungsi untuk menampilkan modal gambar
+        function showImageModal(imageSrc, caption) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+
+            modalImage.src = imageSrc;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fungsi untuk menutup modal gambar
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+
+</body>
 
 
 </html>

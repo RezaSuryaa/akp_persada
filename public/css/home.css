@@ -5,57 +5,24 @@
     --text-color: #21252980;
 }
 
-[data-aos] {
-    visibility: hidden;
-    will-change: transform, opacity;
-}
-
-[data-aos].aos-animate {
-    visibility: visible;
-}
-
-[data-aos="fade-up"] {
-    transform: translateY(30px);
-    opacity: 0;
-    transition-property: transform, opacity;
-}
-
-[data-aos="fade-down"] {
-    transform: translateY(-30px);
-    opacity: 0;
-    transition-property: transform, opacity;
-}
-
-[data-aos="fade-right"] {
-    transform: translateX(-30px);
-    opacity: 0;
-    transition-property: transform, opacity;
-}
-
-[data-aos="fade-left"] {
-    transform: translateX(30px);
-    opacity: 0;
-    transition-property: transform, opacity;
-}
-
-[data-aos="zoom-in"] {
-    transform: scale(0.6);
-    opacity: 0;
-    transition-property: transform, opacity;
-}
-
-/* Saat animasi aktif */
-[data-aos].aos-animate {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-}
-
 body {
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
+    overflow-x: hidden;
     color: var(--third-color);
     font-family: "Poppins", sans-serif;
+}
+
+/* CSS Hero */
+
+#hero h1{
+    font-size: 2.5rem;
+}
+
+#hero p{
+    font-size: 1.5rem;
 }
 
 .video-wrapper {
@@ -127,10 +94,39 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2rem;
+    }
+    #hero p{
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #hero h1 {
+        font-size: 1.6rem;
+    }
+    #hero p{
+        font-size: 1rem;
+    }
+    .btn-custom {
+        height: 35px;
+        width: 120px;
+        border-radius: 8px;
+    }
+    #hero a{
+        font-size: 0.8rem;
+    }
+}
+
+
+/* CSS Tentang */
+
 .judul {
     border-left: 4px solid var(--primary-color);
     padding-left: 10px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 400;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -138,17 +134,44 @@ body {
 
 .icon {
     color: var(--primary-color);
-    font-size: 35px;
+    font-size: 2.2rem;
 }
 
 .pro {
     color: var(--primary-color);
 }
 
+@media (max-width: 768px) {
+    .judul{
+        font-size: 1.5rem;
+    }
+    #tentang p{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .judul{
+        font-size: 1.3rem;
+    }
+    #tentang p{
+        font-size: 0.9rem;
+    }
+    .icon {
+        font-size: 2rem;
+    }
+    .pro {
+        font-size: 1rem;
+    }
+}
+
+/* CSS Visi & Misi */
+
 .vimi {
     background-color: var(--primary-color);
     border-radius: 10px;
     padding: 20px 30px;
+    margin: 0 15px;
 }
 
 .vimi h5 {
@@ -159,27 +182,42 @@ body {
     text-transform: uppercase;
 }
 
-@media (max-width: 576px) {
-    .row.gx-5 {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-
-    .vimi h5 {
-        font-size: 18px;
-    }
-
-    .vimi {
-        font-size: 14px;
-    }
-}
-
 .dot {
     width: 10px;
     height: 10px;
     background-color: white;
     border-radius: 50%;
 }
+
+@media (max-width: 768px) {
+    .vimi {
+        margin: 0 15px;
+    }
+    .vimi h5 {
+        font-size: 1.2rem;
+    }
+    .vimi p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .vimi {
+        margin: 15px 0;
+    }
+    .vimi h5 {
+        font-size: 1rem;
+    }
+    .vimi p {
+        font-size: 0.9rem;
+    }
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* CSS Layanan */
 
 .layanan {
     background-color: var(--primary-color);
@@ -191,7 +229,7 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: radial-gradient(circle at top left, red, yellow);
+    background: radial-gradient(circle at top left, #FB00FF, #FCDD03);
     border: 15px solid white;
     color: white;
     font-size: 50px;
@@ -229,13 +267,36 @@ body {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     #layanan .layanan {
         margin-left: 10px;
         margin-right: 10px;
         border-radius: 50px !important;
     }
+    #layanan h3 {
+        font-size: 1.4rem;
+    }
+    #layanan p {
+        font-size: 1rem;
+    }
 }
+
+@media (max-width: 576px) {
+    #layanan h3 {
+        font-size: 1.3rem;
+    }
+    #layanan p {
+        font-size: 0.9rem;
+    }
+    .layanan h5{
+        font-size: 1.1rem;
+    }
+    .layanan li {
+        font-size: 0.9rem;
+    }
+}
+
+/* CSS Alat */
 
 .alat-card {
     position: relative;
@@ -356,7 +417,6 @@ body {
     opacity: 1;
 }
 
-/* Tambahkan di bagian bawah file CSS */
 .alat-view-icon {
     position: absolute;
     bottom: 65px;
@@ -459,72 +519,10 @@ body {
     transform: rotate(90deg);
 }
 
-/* Produk Card - sama dengan alat card */
-.produk-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.produk-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.produk-card:hover img {
-    transform: scale(1.1);
-}
-
-.produk-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: 0.3s ease;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.produk-card:hover .produk-overlay {
-    opacity: 1;
-}
-
-.produk-view-icon {
-    position: relative;
-    margin-top: 15px;
-    background: rgba(255, 255, 255, 0.9);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #335FCE;
-    font-size: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
-
-.produk-view-icon:hover {
-    background: white;
-}
+/* CSS Legalitas */
 
 #legalitas {
-    background-color: var(--primary-color);
+    background: linear-gradient(to bottom right, var(--primary-color), #00ffe7);
 }
 
 #legalitas .judul {
@@ -582,6 +580,141 @@ body {
     }
 }
 
+@media (max-width: 493px) {
+    .legal-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+        border-radius: 30px;
+        gap: 12px;
+    }
+
+    .legal-content h5 {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+
+    .legal-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+    }
+
+    #legalitas h3 {
+        font-size: 1.5rem;
+    }
+
+    #legalitas .judul {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* CSS Produk */
+
+.produk-card {
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* penting untuk tinggi rata */
+    transition: transform 0.3s ease;
+}
+
+.produk-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Gambar */
+.produk-image-wrapper {
+    position: relative;
+    background: #f5f5f5;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.produk-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Badge */
+.produk-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #335FCE;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+/* Footer (nama + icon) */
+.produk-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px 12px 10px;
+    margin-top: auto;
+    /* dorong footer ke bawah */
+}
+
+.produk-nama {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    color: #000;
+    max-width: calc(100% - 40px);
+    /* biar tidak tabrakan dengan icon */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Icon mata */
+.produk-view-icon {
+    background: #335FCE;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    flex-shrink: 0;
+}
+
+.produk-view-icon:hover {
+    background: #000;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .produk-image-wrapper {
+        height: 200px;
+    }
+
+    .produk-nama {
+        font-size: 13px;
+    }
+}
+
+
+
+/* CSS Client */
+
 .client-slider {
     width: 100%;
     overflow: hidden;
@@ -634,6 +767,7 @@ body {
 }
 
 /* CSS Kontak */
+
 #kontak h3 {
     color: var(--primary-color);
 }
@@ -649,7 +783,7 @@ body {
 
 .kontak-box span {
     word-break: break-word;
-    padding: 0 0.5rem; 
+    padding: 0 0.5rem;
 }
 
 @media (min-width: 992px) {
@@ -669,12 +803,12 @@ body {
         min-height: 500px;
         height: 100% !important;
     }
-    
+
     @media (min-width: 1199px) {
         .kontak-box {
-            padding: 1.5rem 2rem; 
+            padding: 1.5rem 2rem;
         }
-        
+
         .kontak-box span {
             padding: 0 1rem;
         }
@@ -686,12 +820,41 @@ body {
         height: 400px;
         margin-top: 2rem;
     }
-    
+
     .kontak-box {
         margin-bottom: 1.5rem;
-        padding: 1.25rem !important;    }
+        padding: 1.25rem !important;
+    }
 }
 
 .kontak-box:last-child {
-    padding: 1.25rem 1.75rem !important; 
+    padding: 1.25rem 1.75rem !important;
+}
+
+/* CSS Footer */
+
+.footer {
+    background-color: var(--primary-color);
+}
+
+.footer-teks {
+    max-width: 350px;
+}
+
+.footer-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.footer ul li {
+    margin-bottom: 6px;
+}
+
+.social-icons a {
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color) !important;
 }

@@ -33,8 +33,8 @@ class HomeController extends Controller
         }
 
         return view('home', compact(
-            'alats', 
-            'kategorisAlat', 
+            'alats',
+            'kategorisAlat',
             'kategoriAlatId',
             'produks',
             'kategorisProduk',
@@ -44,71 +44,25 @@ class HomeController extends Controller
 
     public function filterAlat(Request $request)
     {
-        $kategoriAlatId = $request->get('kategori_alat_id');
+        $kategoriId = $request->get('kategori_alat_id');
 
-        if ($kategoriAlatId) {
-            $alats = Alat::where('kategori_alat_id', $kategoriAlatId)->get();
-        } else {
-            $alats = Alat::all();
-        }
+        $alats = Alat::when($kategoriId && $kategoriId != 0, function ($query) use ($kategoriId) {
+            return $query->where('kategori_alat_id', $kategoriId);
+        })->get();
 
-        $html = '<div class="row">';
-        
-        if ($alats->isEmpty()) {
-            $html .= '<p class="text-center text-danger">Tidak ada alat dalam kategori ini.</p>';
-        } else {
-            foreach ($alats as $alat) {
-                $html .= '
-                <div class="col-md-3">
-                    <div class="alat-card">
-                        <img src="'.asset('storage/' . $alat->gambar).'" alt="'.$alat->nama.'">
-                        <div class="alat-overlay">
-                            <div>'.$alat->nama.'</div>
-                            <div class="alat-view-icon" onclick="showImageModal(\''.asset('storage/' . $alat->gambar).'\', \''.$alat->nama.'\')">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>';
-            }
-        }
-        $html .= '</div>';
-
-        return $html;
+        return view('partials.alat_list', compact('alats'))->render();
     }
+
 
     public function filterProduk(Request $request)
     {
-        $kategoriProdukId = $request->get('kategori_produk_id');
+        $kategoriId = $request->get('kategori_produk_id');
 
-        if ($kategoriProdukId) {
-            $produks = Produk::where('kategori_produk_id', $kategoriProdukId)->get();
-        } else {
-            $produks = Produk::all();
-        }
+        $produks = Produk::when($kategoriId && $kategoriId != 0, function ($query) use ($kategoriId) {
+            return $query->where('kategori_produk_id', $kategoriId);
+        })->get();
 
-        $html = '<div class="row">';
-        
-        if ($produks->isEmpty()) {
-            $html .= '<p class="text-center text-danger">Tidak ada produk dalam kategori ini.</p>';
-        } else {
-            foreach ($produks as $produk) {
-                $html .= '
-                <div class="col-md-3">
-                    <div class="produk-card">
-                        <img src="'.asset('storage/' . $produk->gambar).'" alt="'.$produk->nama.'">
-                        <div class="produk-overlay">
-                            <div>'.$produk->nama.'</div>
-                            <div class="produk-view-icon" onclick="showImageModal(\''.asset('storage/' . $produk->gambar).'\', \''.$produk->nama.'\')">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>';
-            }
-        }
-        $html .= '</div>';
-
-        return $html;
+        return view('partials.produk_list', compact('produks'))->render();
     }
+
 }
