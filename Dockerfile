@@ -16,14 +16,8 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
-# ✅ gunakan printf agar VirtualHost tidak error
-RUN printf "<VirtualHost *:80>\n\
-    DocumentRoot /var/www/html/public\n\
-    <Directory /var/www/html/public>\n\
-        AllowOverride All\n\
-        Require all granted\n\
-    </Directory>\n\
-</VirtualHost>\n" > /etc/apache2/sites-available/000-default.conf
+# Copy custom apache vhost
+COPY docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 RUN a2enmod rewrite
 
