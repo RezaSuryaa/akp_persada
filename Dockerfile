@@ -16,18 +16,17 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
-# ✅ Fix VirtualHost, sudah ditutup dengan </VirtualHost>
-RUN echo "<VirtualHost *:80> \
-    DocumentRoot /var/www/html/public \
-    <Directory /var/www/html/public> \
-        AllowOverride All \
-        Require all granted \
-    </Directory> \
-</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
+# ✅ gunakan printf agar VirtualHost tidak error
+RUN printf "<VirtualHost *:80>\n\
+    DocumentRoot /var/www/html/public\n\
+    <Directory /var/www/html/public>\n\
+        AllowOverride All\n\
+        Require all granted\n\
+    </Directory>\n\
+</VirtualHost>\n" > /etc/apache2/sites-available/000-default.conf
 
 RUN a2enmod rewrite
 
-# Set permission Laravel
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
     && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
