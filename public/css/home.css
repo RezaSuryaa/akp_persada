@@ -15,13 +15,21 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+@media (max-width: 768px) {
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
 /* CSS Hero */
 
-#hero h1{
+#hero h1 {
     font-size: 2.5rem;
 }
 
-#hero p{
+#hero p {
     font-size: 1.5rem;
 }
 
@@ -69,19 +77,18 @@ body {
 }
 
 .btn-custom {
-    width: 150px;
-    height: 50px;
+    padding: 12px 15px;
     border-radius: 10px;
     color: var(--third-color);
     background-color: var(--primary-color);
     border: none;
     margin-top: 20px;
     text-decoration: none;
-
+    font-weight: 500;
+    letter-spacing: 1px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
     transition: all 0.5s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -98,8 +105,17 @@ body {
     #hero h1 {
         font-size: 2rem;
     }
-    #hero p{
+
+    #hero p {
         font-size: 1.2rem;
+    }
+
+    .btn-custom {
+        padding: 10px 13px;
+    }
+
+    #hero a {
+        font-size: 0.9rem;
     }
 }
 
@@ -107,19 +123,8 @@ body {
     #hero h1 {
         font-size: 1.6rem;
     }
-    #hero p{
-        font-size: 1rem;
-    }
-    .btn-custom {
-        height: 35px;
-        width: 120px;
-        border-radius: 8px;
-    }
-    #hero a{
-        font-size: 0.8rem;
-    }
-}
 
+}
 
 /* CSS Tentang */
 
@@ -142,24 +147,25 @@ body {
 }
 
 @media (max-width: 768px) {
-    .judul{
+    .judul {
         font-size: 1.5rem;
     }
-    #tentang p{
-        font-size: 1rem;
-    }
+
 }
 
 @media (max-width: 576px) {
-    .judul{
+    .judul {
         font-size: 1.3rem;
     }
-    #tentang p{
+
+    #tentang p {
         font-size: 0.9rem;
     }
+
     .icon {
         font-size: 2rem;
     }
+
     .pro {
         font-size: 1rem;
     }
@@ -191,26 +197,23 @@ body {
 
 @media (max-width: 768px) {
     .vimi {
-        margin: 0 15px;
+        margin: 15px 15px;
     }
+
     .vimi h5 {
         font-size: 1.2rem;
-    }
-    .vimi p {
-        font-size: 1rem;
     }
 }
 
 @media (max-width: 576px) {
-    .vimi {
-        margin: 15px 0;
-    }
     .vimi h5 {
         font-size: 1rem;
     }
+
     .vimi p {
         font-size: 0.9rem;
     }
+
     .dot {
         width: 8px;
         height: 8px;
@@ -273,11 +276,9 @@ body {
         margin-right: 10px;
         border-radius: 50px !important;
     }
+
     #layanan h3 {
         font-size: 1.4rem;
-    }
-    #layanan p {
-        font-size: 1rem;
     }
 }
 
@@ -285,12 +286,15 @@ body {
     #layanan h3 {
         font-size: 1.3rem;
     }
+
     #layanan p {
         font-size: 0.9rem;
     }
-    .layanan h5{
+
+    .layanan h5 {
         font-size: 1.1rem;
     }
+
     .layanan li {
         font-size: 0.9rem;
     }
@@ -519,6 +523,20 @@ body {
     transform: rotate(90deg);
 }
 
+@media (max-width: 768px) {
+    .kategori-btn {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .kategori-btn {
+        font-size: 0.8rem;
+        padding: 7px 18px;
+    }
+}
+
 /* CSS Legalitas */
 
 #legalitas {
@@ -578,20 +596,19 @@ body {
     .legal-content {
         flex: 1;
     }
+
+    #legalitas h3 {
+        font-size: 1.4rem;
+    }
 }
 
-@media (max-width: 493px) {
+@media (max-width: 576px) {
     .legal-card {
         flex-direction: column;
         text-align: center;
         padding: 20px 15px;
         border-radius: 30px;
         gap: 12px;
-    }
-
-    .legal-content h5 {
-        font-size: 1.1rem;
-        line-height: 1.4;
     }
 
     .legal-icon {
@@ -601,14 +618,17 @@ body {
     }
 
     #legalitas h3 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
-    #legalitas .judul {
-        font-size: 1.5rem;
+    #legalitas p {
+        font-size: 0.9rem;
+    }
+
+    #legalitas h5 {
+        font-size: 1.1rem;
     }
 }
-
 
 /* CSS Produk */
 
@@ -620,7 +640,6 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* penting untuk tinggi rata */
     transition: transform 0.3s ease;
 }
 
@@ -628,7 +647,6 @@ body {
     transform: translateY(-5px);
 }
 
-/* Gambar */
 .produk-image-wrapper {
     position: relative;
     background: #f5f5f5;
@@ -644,7 +662,6 @@ body {
     object-fit: cover;
 }
 
-/* Badge */
 .produk-badge {
     position: absolute;
     top: 10px;
@@ -658,14 +675,12 @@ body {
     z-index: 2;
 }
 
-/* Footer (nama + icon) */
 .produk-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px 10px 12px 10px;
     margin-top: auto;
-    /* dorong footer ke bawah */
 }
 
 .produk-nama {
@@ -674,13 +689,11 @@ body {
     margin: 0;
     color: #000;
     max-width: calc(100% - 40px);
-    /* biar tidak tabrakan dengan icon */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* Icon mata */
 .produk-view-icon {
     background: #335FCE;
     width: 32px;
@@ -700,8 +713,7 @@ body {
     background: #000;
 }
 
-/* Responsive */
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
     .produk-image-wrapper {
         height: 200px;
     }
@@ -710,8 +722,6 @@ body {
         font-size: 13px;
     }
 }
-
-
 
 /* CSS Client */
 
@@ -820,15 +830,26 @@ body {
         height: 400px;
         margin-top: 2rem;
     }
+}
 
-    .kontak-box {
-        margin-bottom: 1.5rem;
-        padding: 1.25rem !important;
+@media (max-width: 768px) {
+    #kontak h3 {
+        font-size: 1.4rem;
     }
 }
 
-.kontak-box:last-child {
-    padding: 1.25rem 1.75rem !important;
+@media (max-width: 576px) {
+    #kontak h3 {
+        font-size: 1.3rem;
+    }
+
+    #kontak p {
+        font-size: 0.9rem;
+    }
+
+    .kontak-box {
+        font-size: 0.9rem;
+    }
 }
 
 /* CSS Footer */
@@ -842,7 +863,7 @@ body {
 }
 
 .footer-logo {
-    width: 70px;
+    width: 100px;
     height: 70px;
     object-fit: contain;
 }
@@ -857,4 +878,13 @@ body {
 
 .social-icons a:hover {
     color: var(--secondary-color) !important;
+}
+
+@media (max-width: 576px) {
+
+    .footer-teks,
+    li,
+    p {
+        font-size: 0.9rem;
+    }
 }

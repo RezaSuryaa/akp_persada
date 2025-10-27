@@ -28,12 +28,14 @@
         </div>
 
         <div class="container h-100 d-flex justify-content-center align-items-center">
-            <div class="text-center text-white" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-center text-white">
                 <h1 data-aos="fade-up">PT. AKP PERSADA</h1>
                 <p data-aos="fade-up" data-aos-delay="100">Mitra Andal dalam Perdagangan Umum dan Jasa
                     Industri
                 </p>
-                <a href="#" class="btn-custom mt-3" data-aos="fade-up" data-aos-delay="200">Hubungi Kami</a>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <a href="#kontak" class="btn-custom mt-3">Hubungi Kami</a>
+                </div>
             </div>
         </div>
     </section>
@@ -227,7 +229,7 @@
 
             <!-- Filter -->
             <div class="container mb-4 text-center" data-aos="flip-left" data-aos-delay="200">
-                <div class="d-flex flex-wrap justify-content-center gap-2">
+                <div class="filter-alat d-flex flex-wrap justify-content-center gap-2">
                     <button onclick="filterAlat(null)"
                         class="kategori-btn {{ request('kategori_alat_id') == null ? 'active' : '' }}">
                         <span>Semua</span>
@@ -361,7 +363,7 @@
 
             <!-- Filter -->
             <div class="container mb-4 text-center" data-aos="flip-left" data-aos-delay="200">
-                <div class="d-flex flex-wrap justify-content-center gap-2">
+                <div class="filter-produk d-flex flex-wrap justify-content-center gap-2">
                     <button onclick="filterProduk(null)"
                         class="kategori-btn {{ request('kategori_produk_id') == null ? 'active' : '' }}"
                         data-kategori="all">
@@ -525,7 +527,7 @@
     <!-- Start Kontak -->
     <section id="kontak" class="py-5">
         <div class="container">
-        h1   <!-- Judul -->
+            <!-- Judul -->
             <div class="d-flex justify-content-center pb-5">
                 <h1 class="judul text-dark" data-aos="fade-down">Kontak Kami</h1>
             </div>
@@ -602,7 +604,7 @@
                         <img src="assets/logo.png" alt="Logo" class="footer-logo me-0 me-md-3 mb-3 mb-md-0">
 
                         <div>
-                            <h6 class="fw-bold mb-3">PT. AKP PERSADA</h6>
+                            <h5 class="fw-bold mb-3">PT. AKP PERSADA</h5>
                             <p class="footer-teks">
                                 Kami berkomitmen untuk menjadi mitra terpercaya dalam memenuhi kebutuhan industri Anda.
                                 Terima kasih telah mengunjungi halaman kami.
@@ -667,10 +669,9 @@
         });
     </script>
 
-    <!-- JS Filter -->
+    <!-- JS Filter Kategori -->
     <script>
         function filterAlat(kategoriId) {
-            // tampilkan spinner
             $('#loading-spinner-alat').show();
             $('#alat-row').css('opacity', '0');
 
@@ -680,19 +681,14 @@
                 data: { kategori_alat_id: kategoriId },
                 success: function (response) {
                     $('#loading-spinner-alat').hide();
+                    $('#alat-row').html(response).css('opacity', '0').animate({ opacity: 1 }, 300);
 
-                    // replace isi row dengan col dari partial
-                    $('#alat-row')
-                        .html(response)
-                        .css('opacity', '0')
-                        .animate({ opacity: 1 }, 300);
-
-                    // update active button
-                    $('.kategori-btn').removeClass('active');
+                    // hanya reset tombol dalam filter alat
+                    $('.filter-alat .kategori-btn').removeClass('active');
                     if (!kategoriId || kategoriId == 0) {
-                        $('.kategori-btn:first').addClass('active');
+                        $('.filter-alat .kategori-btn:first').addClass('active');
                     } else {
-                        $(`button[onclick="filterAlat(${kategoriId})"]`).addClass('active');
+                        $(`.filter-alat button[onclick="filterAlat(${kategoriId})"]`).addClass('active');
                     }
                 },
                 error: function (xhr) {
@@ -703,9 +699,7 @@
             });
         }
 
-
         function filterProduk(kategoriId) {
-            // tampilkan spinner
             $('#loading-spinner-produk').show();
             $('#produk-row').css('opacity', '0');
 
@@ -715,21 +709,15 @@
                 data: { kategori_produk_id: kategoriId },
                 success: function (response) {
                     $('#loading-spinner-produk').hide();
+                    $('#produk-row').html(response).css('opacity', '0').animate({ opacity: 1 }, 300);
 
-                    // replace isi row dengan col dari partial
-                    $('#produk-row')
-                        .html(response)
-                        .css('opacity', '0')
-                        .animate({ opacity: 1 }, 300);
-
-                    // update active button
-                    $('.kategori-btn').removeClass('active');
+                    // hanya reset tombol dalam filter produk
+                    $('.filter-produk .kategori-btn').removeClass('active');
                     if (!kategoriId || kategoriId == 0) {
-                        $('.kategori-btn[data-kategori="all"]').addClass('active');
+                        $('.filter-produk .kategori-btn[data-kategori="all"]').addClass('active');
                     } else {
-                        $(`.kategori-btn[data-kategori="${kategoriId}"]`).addClass('active');
+                        $(`.filter-produk .kategori-btn[data-kategori="${kategoriId}"]`).addClass('active');
                     }
-
                 },
                 error: function (xhr) {
                     $('#loading-spinner-produk').hide();
@@ -738,7 +726,6 @@
                 }
             });
         }
-
     </script>
 
     <!-- JS Modal Gambar -->
